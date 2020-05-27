@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title></title>
+  <style type="text/css">
+   p .tooltip {
+    color: orange;
+    position: relative;
+   }
+   p .tooltip::after {
+    content: attr(title);
+    word-break: keep-all;
+    position: absolute;
+    padding: 4px 16px;
+    color: #fff;
+    background: #aa00ff;
+    left: calc(100% + 60px);
+    top: -3px;
+    border: 1px solid black;
+    opacity: 0;
+    transition: all 1s;
+   }
+   p .tooltip:hover::after {
+    opacity: 1;
+    left: calc(100% + 8px);
+   }
+
+   p .tooltip::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: black;
+    position: absolute;
+    z-index: 2;
+    left: calc(100% + 40px);
+    top: 2px;
+    opacity: 0;
+    transition: all 1s;
+   }
+
+   p .tooltip:hover::before {
+    opacity: 1;
+    left: calc(100% - 11px);
+   }
+  </style>
+ </head>
+ <body>
+  <p>HTML<span title="很重要" class="tooltip">css</span>很棒 <span title="努力学习" class="tooltip">
+   java
+  </span>WOW</p >
+ </body>
+<html>
