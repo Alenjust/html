@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		输入成绩: <input type="text" name="" id="score" placeholder="请输入你的成绩">
+		<br>
+		成绩为: <input type="text" id="xianshi">
+		<br><br>
+		<input type="button" value="点击" id="" onclick="panduan()">
+		
+		<script>
+			function panduan() {
+				var score;
+				score = document.getElementById("score").value;
+				if (score > 100) {
+					alert("请重新输入0——100的正确分数!");
+				} else if (score >= 90 && score <= 100) {
+					document.getElementById("xianshi").value = "优秀";
+				} else if (score < 90 && score >= 80) {
+					document.getElementById("xianshi ").value = "良好";
+				} else if (score < 80 && score >= 70) {
+					document.getElementById("xianshi ").value = "中等";
+				} else if (score < 70 && score >= 60) {
+					document.getElementById("xianshi").value = "及格";
+				} else if (score < 60) {
+					document.getElementById("xianshi").value = "不及格";
+				}else if(score<0){
+					alert("请重新输入0——100的正确分数!");
+				}
+			}
+		</script>
+	</body>
+</html>
