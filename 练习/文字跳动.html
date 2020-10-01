@@ -1,0 +1,85 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>李永丽</title>
+ 
+    <style>body{
+		background-color: #9370DB;
+		
+		}
+        #txtDom {
+            padding:50px;
+            width:1200px;
+            margin:0 auto;
+            font-size:30px;
+            color: cornflowerblue;
+            line-height:1.3em;
+            text-indent:2em;
+        }
+		video{
+			width:70%;/* 视频宽度 */
+			height:65%;/* 视频高度 */
+			text-align: center;
+		}
+    </style>
+</head>
+<body >
+<div id="txtDom">
+	陈记川
+	</div>
+<script>
+    var txtAnim = {
+        len: 0,
+        txtDom: "",
+        arrTxt: [],
+        init: function(obj) {
+            this.obj = obj;
+            this.txtDom = obj.innerHTML.replace(/\s+/g, "");
+            this.len = this.txtDom.length;
+            obj.innerHTML = "";
+            this.addDom();
+        },
+        addDom: function() {
+            for (var i = 0; i < this.len; i++) {
+                var spanDom = document.createElement("span");
+                spanDom.innerHTML = this.txtDom.substring(i, i + 1);
+                this.obj.appendChild(spanDom);
+                this.arrTxt.push(spanDom);
+            };
+            for (var j = 0; j < this.len; j++) {
+                this.arrTxt[j].style.position = "relative";
+            };
+            this.strat();
+        },
+        strat: function() {
+            for (var i = 0; i < this.len; i++) {
+                this.arrTxt[i].onmouseover = function() {
+                    this.stop = 0;
+                    this.speed = -1;
+                    var $this = this;
+                    this.timer = setInterval(function() {
+ 
+                        $this.stop += $this.speed; //0  += -1
+                        if ($this.stop <= -20) {
+                            $this.speed = 1;
+                        }
+ 
+                        $this.style.top = $this.stop + "px";
+ 
+                        if ($this.stop >= 0) {
+                            clearInterval($this.timer)
+                            $this.style.top = 0 + "px";
+                        };
+                    }, 15);
+                };
+            }
+        }
+    }
+ 
+    var txtDom = document.getElementById("txtDom");
+    txtAnim.init(txtDom);
+</script>    
+</body>
+</html>

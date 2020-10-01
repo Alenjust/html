@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<h2>提交问题</h2>
+			<a href="http://www.example.com">
+				<span id="seconds">5</span>秒后系统会自动跳转，也可单击此链接跳转
+			</a>
+		</div>
+		<script type="text/javascript">
+			function timing(secs,url){
+				var ceconds = document.getElementById('seconds');
+				seconds.innerHTML = --secs;
+				if(secs>0){
+					setTimeout('timing('+secs+',\''+url+'\')',1000);
+				}else{
+					location.href = url;
+				}
+			};
+			timing(5,'http://www.example.com');
+		</script>
+	</body>
+</html>

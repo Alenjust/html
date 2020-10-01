@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>简历</title>
+  <style>
+  *{ 
+  margin: 0; padding: 0; 
+  }
+  body{
+  width:%100;
+  height:%100;
+  text-align:center;
+  background-color:#008000;
+  }
+  .class1{
+  width:300px;
+  height:1000px;
+  background-color:#666666;
+  float:left;
+  color :white;
+  }
+  .class4{
+  margin-top:50px;
+  }
+  ul{
+  margin:0; padding:0;
+      color:white;
+  	padding-left: 100px;
+  	text-align:left;
+  }
+  hr{
+  height: 2px;
+   background-color: black; 
+   border: 0;
+  }
+  p{
+  	font-size:20px;
+  }
+  table, td, th
+  {
+      border:1px solid deepskyblue;
+  }
+  </style>
+ </head>
+ <body background="beijing.jpg">
+  <div class="class1">
+     <div class="class4">
+      <img src="4.png">
+     </div>
+     <img src="5.png"align="left">
+     <h1>个人信息</h1>
+     <br/>
+  	<ul>
+  	<li>姓名：陈记川</li>
+  	<br/>
+  	<li>出生年月：2000.02.22</li>
+  	<br/>
+  	<li>籍贯：贵州</li>
+  	<br/>
+  	<li>民族：布依族</li>
+  	</ul>
+  	<br/>
+     <img src="6.png"align="left">
+  	<h1>联系方式</h1>
+  	<ul>
+  	<li>qq：2501647360</li>
+  	<br/>
+  	<li>电话：15329646728</li>
+  	<br/>
+  	<li>微信：15329646728</li>
+  	<br/>
+  	<li>地址：贵州</li>
+  	</ul>
+  	<br/>
+  	<img src="10.png"align="left">
+  	<h1>兴趣爱好</h1>
+  	<div class="pic">
+  	<ul>
+  	<li>运动</li>
+  	</ul>
+  	</div>
+  </div>
+  <div class="class3">
+  	<h1>个人简历</h1>
+  </div>
+  <div class="class2">
+  <br/>
+  <br/>
+  <img src="11.png"align="left">
+  <br/>
+  <hr/>
+  <p>
+  	不管怎样我还是那么喜欢你----------
+  </p>
+  </div>
+  <!--响应式图像-->
+  <picture>
+   <source srcset="beijing.jpg" media="min-width:1000px">
+  </picture>
+  <!--浏览器兼容-->
+  <picture>
+   <source type="image/svg+xml" srcset="beijing.jpg">
+   <source type="image/webp+xml" srcset="beijing.jpg">
+  </picture>
+ </body>
+</html>

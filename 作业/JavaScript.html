@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- <script type="text/javascript">
+			function Color(yanse) {
+				document.body.style.backgroundColor = yanse;
+			}
+		</script> -->
+
+		<script type="text/javascript">
+			// alert('请输入！');
+			//console.log('输入错误！');
+			// alert('输入错误！');
+			// document.write('<b>我是JavaScript...</b>');
+			// alert(13+5);
+			// alert(5656+1256456+546+45646456+56+66+54+94+64+656+9+65+6);
+			// alert('56'+'98');
+			// var num1=200;
+			// var num2=200;
+			// var score=93;
+
+			// if(num1<=num2)
+			// {
+			// 	alert('成立')
+			// }
+			// else if(num1>=num2)
+			// {
+			// 	alert('不成立');
+			// } 
+			// var mima=prompt('请输入密码');
+			// alert(mima);
+
+			// var lo=10;
+			// var lo=100;
+			// var lo=1000;
+			// var
+			// alert(123121+52245);
+
+			// var name='bsnxbhj';
+			// var age=121;
+			// var number=age+12;
+			// //转换成字符串类型
+			// console.log(typeof Number.toString());
+
+			//转换成数值类型
+			// var name='张三';
+			// var age='12';
+			// console.log(Number (age));
+			// console.log(parseInt(age));
+
+			//转换成浮点数
+			// var name='123.123';
+			// console.log(parseFloat(name));
+			// console.log(parseInt(name));
+
+			// var ok=true;
+			// console.log(+ok);
+
+
+			// var a=true;
+			// var b=true;
+			// && 与   只要有一个为false，则值为false;
+			// console.log(a&&b);
+
+			// || 或  一真为真，一假为假
+			// console.log(a||b);
+			// console.log(a!=b);
+			// document.write(a+b);
+
+			// function biaobai (a,b){
+			// 	document.write(a+b);
+			// }
+			// var x='我们一起';
+			// var y='去玩';
+			// biaobai(x,y);
+
+
+			// function add (shu1,shu2){
+			// 	var he=(shu1+shu2);
+			// 	return he;
+			// }
+			// alert(add(12,13));
+			// document
+
+			// var password = prompt('请输入密码:');
+			// if(password == '123456'){
+			// 	alert('密码输入正确！');
+			// }else{
+			// 	alert('密码输入错误！')
+			// }
+
+			// var score = prompt('请输入分数: ');
+			// if(score>=90 && score>=100){
+			// 	document.getElementById('cor').value=('A');
+			// }else{
+			// 	document.getElementById('cor').value=('E');
+
+			// 	}
+		</script>
+	</head>
+	<body>
+		<!-- 前端开发加强显示，点击前端开发会跳转到百度主页 -->
+		<!-- <p>我是一个<b><a href="https://www.baidu.com/">前端开发</a></b>人员</p>
+		<script type="text/javascript">
+			var sum=0;
+			for(var i=0;i<100;i++){
+				sum=sum+i;
+		 	}
+		 	alert(sum);
+		</script> -->
+
+		<!-- <input type="button" value="red" onclick="Color('RED')">
+		<input type="button" value="black" onclick="Color('black')">
+		<input type="button" value="yellow" onclick="Color('yellow')">
+		<input type="button" value="pink" onclick="Color('pink')"> -->
+		
+		<!-- <p>分数等级:<input id="cor" type="text"></p> -->
+		
+		
+
+
+
+		<label for="score">请输入成绩：</label>
+		<!--label让光标自动定位到文本框-->
+		<input type="text" id="score">
+		<input type="button" value="确认" onclick="js()" />
+		<p id="result"></p>
+		<script>
+			function js() {
+				var psd = document.getElementById("score").value; //得到输入框的输入内容
+				var pss = document.getElementById("result");
+				if (psd >= 90){
+					pss.innerHTML = "优秀"; //设置<p>与</p>之间的html
+				}else if (psd >= 80){
+					pss.innerHTML = "良好";
+				}else if (psd >= 60){
+					pss.innerHTML = "及格";
+				}else {
+				pss.innerHTML = "不及格";
+				}
+			}
+		</script>
+
+	</body>
+</html>

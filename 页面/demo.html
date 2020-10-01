@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>dowebok</title>
+		<link rel="stylesheet" href="https://cdn.dowebok.com/77/css/jquery.fullPage.css">
+		<style>
+			.section {
+				text-align: center;
+				font: 50px "Microsoft Yahei";
+				color: deepskyblue;
+			}
+
+			.section {
+				background-image: url(01.jpg);
+			}
+
+			.section .slide .s1 {
+				background-image: url(01.jpg);
+			}
+
+			.section .slide .s2 {
+				background-image: url(10.jpg);
+			}
+
+			.section .slide .s3 {
+				background-image: url(01.jpg);
+			}
+		</style>
+		<script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdn.dowebok.com/77/js/jquery.fullPage.min.js"></script>
+		<script>
+			$(function() {
+				$('#dowebok').fullpage({
+					sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="dowebok">
+			<div class="section">
+				<h3>第一屏</h3>
+				<p>fullPage.js — 基本演示</p>
+			</div>
+			<div class="section">
+				<div class="slide s1">
+					<h3>第二屏的第一屏</h3>
+				</div>
+				<div class="slide s2">
+					<h3>第二屏的第二屏</h3>
+				</div>
+				<div class="slide s3">
+					<h3>第二屏的第三屏</h3>
+				</div>
+			</div>
+			<div class="section">
+				<h3>第三屏</h3>
+			</div>
+			<div class="section">
+				<h3>第四屏</h3>
+				<p>这是最后一屏</p>
+			</div>
+		</div>
+		</div>
+
+	</body>
+</html>

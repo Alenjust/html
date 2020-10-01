@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body,
+			ul {
+				margin: 0;
+				padding: 0;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			.tab-box {
+				width: 384px;
+				margin: 10px;
+				border: 1px solid #ccc;
+				border-top: 2px solid #206F96;
+			}
+
+			.tab-head {
+				height: 31px;
+			}
+
+			.tab-head-div {
+				width: 95px;
+				height: 30px;
+				float: left;
+				border-bottom: 1px solid #ccc;
+
+				border-right: 1px solid #ccc;
+				background: #206F96;
+				line-height: 30px;
+
+				text-align: center;
+				cursor: pointer;
+				color: #fff;
+			}
+
+			.tab-head .current {
+				background: #fff;
+				border-bottom: 1px solid #fff;
+				color: #000;
+			}
+
+			.tab-head-r {
+				border-right: 0;
+			}
+
+			.tab-body-div {
+				display: none;
+				margin: 20px 10px;
+			}
+
+			.tab-body .current {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tab-box">
+			<div class="tab-head">
+				<div class="tab-head-div current">标签一</div>
+				<div class="tab-head-div">标签二</div>
+				<div class="tab-head-div">标签三</div>
+				<div class="tab-head-div">标签四</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-body-div current">1</div>
+				<div class="tab-body-div">2</div>
+				<div class="tab-body-div">3</div>
+				<div class="tab-body-div">4</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var tabs = document.getElementsByClassName('tab-head-div');
+			var divs = document.getElementsByClassName('tab-body-div');
+			for(var i = 0;i< tabs.length;++i){
+				tabs[i].onmouseover = function(){
+					for(var i = 0;i< divs.length;++i){
+						if(tabs[i] == this){
+							divs[i].classList.add('current');
+							tabs[i].classList.add('current');
+						}else{
+							divs[i].classList.remove('current');
+							tabs[i].classList.remove('current');
+						}
+					}
+				};
+			}
+		</script>
+	</body>
+</html>

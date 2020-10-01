@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>个人主页</title>
+		<script src="js/jquery.min.js"></script>
+		<style>/*布局设置 */
+		video{/* 视频页面大小设置 */
+		width:70%;/* 视频宽度 */
+		height:65%;/* 视频高度 */
+		text-align: center;
+		}
+		p{/* 文本大小设置 */
+			width:100%;
+			height:12%;
+		}
+		</style>
+	</head>
+	<!-- 加入背景 -->
+	<body background="beijing.jpg">
+		<!-- 网页文本 -->
+		<p>冬天总是不如夏春秋一般柔软多情，既然来了，就让人记得刻苦铭心。人生如此般，雪一般的岁月，苦中作乐，暂不说这是那些文人雅客笔下描写的那样如诗如画，却也是每一个人的雪景中总有一处属于自己建立起的一片天地。如痴如醉的自己，看不清别人，也看不清自己，倒也是一种境界，让人有点糊涂，有点执迷。</p>
+		<!--响应式图像-->
+		<picture>
+		 <source srcset="beijing.jpg" media="min-width:1000px">
+		</picture>
+		<!--浏览器兼容-->
+		<picture>
+		 <source type="image/svg+xml" srcset="beijing.jpg">
+		 <source type="image/webp+xml" srcset="beijing.jpg">
+		</picture>
+		<!-- 插入视频 -->
+		<video width="320" height="240" controls="controls" autoplay="autoplay"Cache/MV123.mp4">
+		  <source src="Cache/MV/123.mp4" type="video/mp4">
+		  <source src="Cache/MV/123.mp4" type="video/ogg">
+		  <source src="Cache/MV/123.mp4" type="video/webm">
+		  <object src="Cache/MV/123.mp4" width="320" height="240">
+		    <embed src="Cache/MV/123.mp4" width="320" height="240">
+		  </object> 
+		</video>
+			<!--响应式图像-->
+					<picture>
+					 <source srcset="beijing.jpg" media="min-width:1000px">
+					</picture>
+					<!--浏览器兼容-->
+					<picture>
+					 <source type="image/svg+xml" srcset="beijing.jpg">
+					 <source type="image/webp+xml" srcset="beijing.jpg">
+					</picture>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* cssDocument */
+body{
+	font-size: 18px;font-family: "微软雅黑";background: url(../情人节/所有图片/background/a_background_top.png)
+	no-repeat top center;color: #FFF;}
+form,p,{padding: 0;margin: 0;border: 0;}/* 重置浏览器的默认样式 */
+form{
+	width: 420px;
+	height: 200px;
+	padding-top: 60px;
+	margin: 250px auto;
+	background: rgba(255,255,255,0.1);
+	border-radius: 20px;
+	border: 1px solid rgba(255,255,255,0.3);
+}
+p{
+	margin-top: 15px;
+	text-align: center;
+	
+}
+span{
+	width: 60px;
+	display: inline-block;
+	text-align: right;
+}
+.num,.pass{
+	width: 165px;
+	height: 18px;
+	border: 1px solid rgba(255,255,255,0.3);
+	padding: 2px 2px 2px 22px;
+	border-radius: 5px;
+	color: #FFF;
+}
+.num{
+	background: url(../情人节/所有图片/sun.png) no-repeat 5px center rgba(255,255,255,0.1);
+}
+.pass{
+	background: url(../情人节/images/55addf6900019d8f14410645.png) no-repeat 5px center rgba(255,255,255,0.1);
+}
+.btn01{
+	width: 190px;
+	height: 25px;
+	border-radius: 3px;
+	border: 2px solid #000;
+	margin-left: 65px;
+	background: #57b2c9;
+	color: #FFF;
+	border: none;
+}

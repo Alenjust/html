@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="一起来看流星雨">
+		<meta name="description" content="流星雨效果">
+		<title>canvas雨滴</title>
+		<style>
+			body {
+				margin: 0
+			}
+
+			#rain {
+				display: block;
+				background: #33ffff;
+
+				/* width: 100%;
+height: 100%; */
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="rain"></canvas>
+		<!-- 添加背景音乐 -->
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1455445437&auto=1&height=66"></iframe>
+		<script>
+			// 1.1 设置canvas元素的宽高与浏览器一样
+			var can = document.getElementById("rain");
+			// 1.2 获取浏览器宽高
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+			// 1.3 给canvas元素设置宽高
+			can.width = w
+			can.height = h
+			// 1.4 当窗口大小发生变化的时候自动再调整canvas的宽高
+			window.onresize = function() {
+				w = window.innerWidth
+				h = window.innerHeight
+				can.width = w
+				can.height = h
+			}
+			// 2 如何用canvas绘制图形 画布(卷轴 -> 宣纸)
+			var canContent = can.getContext("2d") //拿到画画的宣纸
+
+			function Rain() {} //生成雨滴的封装函数
+
+			//随机函数,生成x和y的坐标
+			function random(min, max) {
+				return Math.random() * (max - min) + min
+			}
+			Rain.prototype = {
+				init: function() {
+					this.x = random(0, w) //雨滴初始的x坐标
+					this.y = 0 //雨滴初始的y坐标
+					this.v = random(4, 5) //下落加速度
+					this.h = random(0.8 * h, 0.9 * h) //雨滴下落的地面
+					this.r = 1 //初始半径
+					this.vr = random(0.4, 0.6) //半径增长率
+					this.a = 1 //初始透明度
+					this.va = 0.96 // 透明度变化系数
+				},
+				draw: function() {
+					if (this.y < this.h) {
+						// canContent.fillStyle = "#33ffff" //拿一只画实心图形的红色的笔
+						canContent.fillStyle = "red"
+						canContent.fillRect(this.x, this.y, 2, 10) // 画一个实心的矩形
+					} else {
+						// canContent.strokeStyle = "rgba(51,255,255," + this.a + ")"
+						canContent.strokeStyle = "rgba(255,0,0," + this.a + ")" //雨滴落地颜色
+						canContent.beginPath() //重新拿起笔
+						canContent.arc(this.x, this.y, this.r, 0, Math.PI * 2)
+						canContent.stroke();
+					}
+
+				},
+				move: function() {
+					if (this.y < this.h) {
+						this.y += this.v
+					} else {
+						if (this.a > 0.02) {
+							this.r += this.vr
+							if (this.r > 50) {
+								this.a *= this.va
+							}
+						} else {
+							this.init()
+						}
+					}
+					this.draw()
+				}
+			}
+
+			//复用性
+			var rainArray = []
+
+			function createRain() {
+				var rain = new Rain()
+				rain.init() //基本配置
+				rain.draw()
+				rainArray.push(rain)
+			}
+			createRain()
+			for (var i = 0; i < 30; i++) {
+				setTimeout(createRain, 200 * i)
+			}
+
+			function moveRain() {
+				canContent.fillStyle = "rgba(0, 23, 0, 0.05)"
+				canContent.fillRect(0, 0, w, h)
+				for (var k = 0; k < rainArray.length; k++) {
+					rainArray[k].move();
+				}
+			}
+
+			function run() {
+				moveRain()
+				setTimeout(run, 100 / 60)
+			}
+			run()
+			// setInterval(moveRain, 1000 / 60) //所有的计算和渲染必须在16ms内完成
+		</script>
+	</body>
+</html>
