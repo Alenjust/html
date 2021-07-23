@@ -1,0 +1,205 @@
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body> -->
+<!-- <table cellspacing="0" cellpadding="0">
+			<tr>
+				<th>Header</th>
+				<th>Header</th>
+			</tr>
+			<tr>
+				<td>Data</td>
+			</tr>
+			<tr>
+				<td>Data</td>
+			</tr>
+			<tr>
+				<td>Data</td>
+			</tr>
+			<tr>
+				<td>Data</td>
+			</tr>
+		</table>
+		<select>
+			<option value="123" select="select">1</option>
+			<option value="123">2</option>
+			<option value="123">3</option>
+		</select>
+		<input type="radio" name="sex" id="nan" value="" checked="checked" /><label for="nan">男</label>
+		<input type="radio" name="sex" id="nv" value="" /><label for="nv">女</label> -->
+<!--定义表单 form-->
+<!-- <form action="#" method="post">
+		    <table border="1" align="center" width="500">
+		        <tr>
+		            <td><label for="username">用户名</label></td>
+		            <td><input type="text" name="username" id="username"></td>
+		        </tr>
+		
+		        <tr>
+		            <td><label for="password">密码</label></td>
+		            <td><input type="password" name="password" id="password" ></td>
+		        </tr>
+		
+		        <tr>
+		            <td><label for="email">Email</label></td>
+		            <td><input type="email" name="email" id="email"></td>
+		        </tr>
+		
+		        <tr>
+		            <td><label for="name">姓名</label></td>
+		            <td><input type="text" name="name" id="name"></td>
+		        </tr>
+		
+		        <tr>
+		            <td><label for="tel">手机号</label></td>
+		            <td><input type="text" name="tel" id="tel"></td>
+		        </tr>
+		
+		        <tr>
+		            <td><label>性别</label></td>
+		            <td><input type="radio" name="gender" value="male"> 男
+		                <input type="radio" name="gender" value="female"> 女
+		            </td>
+		        </tr>
+		
+		        <tr>
+		            <td><label for="birthday">出生日期</label></td>
+		            <td><input type="date" name="birthday" id="birthday"></td>
+		        </tr>
+		
+		        <tr>
+		            <td><label for="checkcode">验证码</label></td>
+		            <td><input type="text" name="checkcode" id="checkcode">
+		                <img src="img/verify_code.jpg">
+		            </td>
+		        </tr>
+		
+		
+		        <tr>
+		            <td colspan="2" align="center">
+		                <input type="submit" value="注册"></td>
+		        </tr>
+		    </table>
+		
+		
+		</form>
+	</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>彩票</title>
+		<style type="text/css">
+			body{
+				background-color: antiquewhite;
+			}
+			.T{
+				background-color: #FF0000;
+			}
+			#wrap {
+				width: 500px;
+				height: 800px;
+				border: 1px solid red;
+				margin: 100px auto 0px;
+				text-align: center;
+				position: relative;
+				background-color: royalblue;
+			}
+
+			#btn {
+				width: 100px;
+				height: 50px;
+				font-size: 20px;
+				margin-top: 10px;
+				background-color: yellow;
+			}
+			#one div {
+				width: 50px;
+				height: 50px;
+				border: 1px solid black;
+				display: inline-block;
+				margin-top: 50px;
+				line-height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<input type="button" name="" id="btn" value="随机一注">
+			<div id="one">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="T"></div><br />
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="T"></div><br />
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="T"></div><br />
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="T"></div><br />
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="T"></div><br />
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="T"></div><br />
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="T"></div><br />
+			</div>
+		</div>
+		<script type="text/javascript">
+			//获取元素
+			var btn = document.getElementById('btn')
+			var odiv = document.getElementById('one')
+			var div = one.getElementsByTagName('div')
+
+			//定义点击事件
+			btn.onclick = function() {
+				for (var i = 0; i < div.length; i++) {
+					var num = Math.floor(Math.random() * 10);
+					div[i].innerHTML = num;
+					if (div[i].innerHTML >0 && div[i].innerHTML < 10) {
+						div[i].innerHTML = '0' + div[i].innerHTML;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
